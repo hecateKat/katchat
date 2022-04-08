@@ -22,11 +22,11 @@ import static java.nio.channels.SelectionKey.OP_WRITE;
 @Setter
 public abstract class AbstractServerComponent implements Runnable, ChatConfig {
 
-    private final String id;
-    private final ByteBuffer byteBuffer;
-    private final Selector selector;
-    private final AbstractSelectableChannel abstractSelectableChannel;
-    private final InetSocketAddress inetSocketAddress;
+    protected final String id;
+    protected final ByteBuffer byteBuffer;
+    protected final Selector selector;
+    protected final AbstractSelectableChannel abstractSelectableChannel;
+    protected final InetSocketAddress inetSocketAddress;
     private volatile boolean running;
 
     public AbstractServerComponent(String id, int port) throws IOException {
